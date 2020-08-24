@@ -1,0 +1,29 @@
+ALGORITHM phrase
+VAR
+   str : STRING;
+   compteur : INTEGER := 0;
+   nb_mots : INTEGER := 0;
+   nb_voyelles : INTEGER := 0;
+   longueur : INTEGER;
+BEGIN
+    Read(str);
+
+    WHILE (phrase[compteur] <> '.') DO
+        IF (uppercase(phrase[compteur])='A') OR (uppercase(phrase[compteur])='E') OR (uppercase(phrase[compteur])='I') OR (uppercase(phrase[compteur])='O') OR (uppercase(phrase[compteur])='U') OR (uppercase(phrase[compteur])='Y') THEN
+            nb_voyelles := nb_voyelles+1 ;
+        END_IF
+
+        IF (phrase[compteur] = ' ') THEN
+            nb_mots := nb_mots+1;
+        END_IF
+
+        compteur := compteur+1;
+    END_WHILE
+
+     nb_mots := nb_mots+1;
+     longueur := compteur+1;
+
+     Write('Le nombre des voyelles=' , nb_voyelles);
+     Write('Le nombre des mots=' , nb_mots);
+     Write('La longueur de la phrase=' , longueur);
+END
